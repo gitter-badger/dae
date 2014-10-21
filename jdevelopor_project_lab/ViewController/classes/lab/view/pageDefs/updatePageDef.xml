@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="updatePageDef"
+                Package="lab.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ClientesView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ClientesView1Iterator" id="RutClie">
+      <AttrNames>
+        <Item Value="RutClie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="DvClie">
+      <AttrNames>
+        <Item Value="DvClie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="CodigoCiud">
+      <AttrNames>
+        <Item Value="CodigoCiud"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="CodigoGiro">
+      <AttrNames>
+        <Item Value="CodigoGiro"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="NombreClie">
+      <AttrNames>
+        <Item Value="NombreClie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="DireccionClie">
+      <AttrNames>
+        <Item Value="DireccionClie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="TelefonoClie">
+      <AttrNames>
+        <Item Value="TelefonoClie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientesView1Iterator" id="RowID">
+      <AttrNames>
+        <Item Value="RowID"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

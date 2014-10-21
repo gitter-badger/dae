@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+            id="t1"/>
+  <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                     id="tbb1"/>
+  <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:panelHeader text="Clientes" id="ph1">
+      <af:query id="qryId1" headerText="Search" disclosed="true"
+                value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                resultComponentId="::resId1"/>
+    </af:panelHeader>
+    <af:table value="#{bindings.ClientesView1.collectionModel}" var="row"
+              rows="#{bindings.ClientesView1.rangeSize}"
+              emptyText="#{bindings.ClientesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.ClientesView1.rangeSize}"
+              rowBandingInterval="0"
+              selectedRowKeys="#{bindings.ClientesView1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.ClientesView1.collectionModel.makeCurrent}"
+              rowSelection="single" id="resId1">
+      <af:column sortProperty="#{bindings.ClientesView1.hints.RutClie.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.RutClie.label}"
+                 id="resId1c1">
+        <af:outputText value="#{row.RutClie}" id="ot1">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.ClientesView1.hints.RutClie.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.DvClie.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.DvClie.label}"
+                 id="resId1c2">
+        <af:outputText value="#{row.DvClie}" id="ot3"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.CodigoCiud.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.CodigoCiud.label}"
+                 id="resId1c3">
+        <af:outputText value="#{row.CodigoCiud}" id="ot8">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.ClientesView1.hints.CodigoCiud.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.CodigoGiro.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.CodigoGiro.label}"
+                 id="resId1c4">
+        <af:outputText value="#{row.CodigoGiro}" id="ot4">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.ClientesView1.hints.CodigoGiro.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.NombreClie.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.NombreClie.label}"
+                 id="resId1c5">
+        <af:outputText value="#{row.NombreClie}" id="ot6"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.DireccionClie.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.DireccionClie.label}"
+                 id="resId1c6">
+        <af:outputText value="#{row.DireccionClie}" id="ot5"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.TelefonoClie.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.TelefonoClie.label}"
+                 id="resId1c7">
+        <af:outputText value="#{row.TelefonoClie}" id="ot7"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientesView1.hints.RowID.name}"
+                 sortable="true"
+                 headerText="#{bindings.ClientesView1.hints.RowID.label}"
+                 id="resId1c8">
+        <af:outputText value="#{row.RowID}" id="ot2"/>
+      </af:column>
+    </af:table>
+  </af:panelGroupLayout>
+</jsp:root>

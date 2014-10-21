@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="cli-update-flow">
+    <default-activity id="__1">intro</default-activity>
+    <transaction id="__6">
+      <new-transaction/>
+    </transaction>
+    <view id="intro">
+      <page>/intro.jsff</page>
+      <train-stop id="__2"/>
+    </view>
+    <view id="search">
+      <page>/search.jsff</page>
+      <train-stop id="__3"/>
+    </view>
+    <view id="update">
+      <page>/update.jsff</page>
+      <train-stop id="__4"/>
+    </view>
+    <task-flow-return id="rollback">
+      <outcome id="__7">
+        <name>rollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="commit">
+      <outcome id="__8">
+        <name>commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">update</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">rollback</from-outcome>
+        <to-activity-id id="__11">rollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome id="__16">commit</from-outcome>
+        <to-activity-id id="__15">commit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

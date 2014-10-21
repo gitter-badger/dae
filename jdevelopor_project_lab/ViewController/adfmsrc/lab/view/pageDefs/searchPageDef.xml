@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="searchPageDef"
+                Package="lab.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ClientesView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ClientesView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClientesView1Iterator" id="ClientesView1">
+      <nodeDefinition DefName="lab.model.ClientesView" Name="ClientesView10">
+        <AttrNames>
+          <Item Value="RutClie"/>
+          <Item Value="DvClie"/>
+          <Item Value="CodigoCiud"/>
+          <Item Value="CodigoGiro"/>
+          <Item Value="NombreClie"/>
+          <Item Value="DireccionClie"/>
+          <Item Value="TelefonoClie"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
