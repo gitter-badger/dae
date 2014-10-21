@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+            id="t1"/>
+  <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                     id="tbb1"/>
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.RutClie.inputValue}"
+                  label="#{bindings.RutClie.hints.label}"
+                  required="#{bindings.RutClie.hints.mandatory}"
+                  columns="#{bindings.RutClie.hints.displayWidth}"
+                  maximumLength="#{bindings.RutClie.hints.precision}"
+                  shortDesc="#{bindings.RutClie.hints.tooltip}" id="it4">
+      <f:validator binding="#{bindings.RutClie.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.RutClie.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.DvClie.inputValue}"
+                  label="#{bindings.DvClie.hints.label}"
+                  required="#{bindings.DvClie.hints.mandatory}"
+                  columns="#{bindings.DvClie.hints.displayWidth}"
+                  maximumLength="#{bindings.DvClie.hints.precision}"
+                  shortDesc="#{bindings.DvClie.hints.tooltip}" id="it3">
+      <f:validator binding="#{bindings.DvClie.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.CodigoCiud.inputValue}"
+                  label="#{bindings.CodigoCiud.hints.label}"
+                  required="#{bindings.CodigoCiud.hints.mandatory}"
+                  columns="#{bindings.CodigoCiud.hints.displayWidth}"
+                  maximumLength="#{bindings.CodigoCiud.hints.precision}"
+                  shortDesc="#{bindings.CodigoCiud.hints.tooltip}" id="it6">
+      <f:validator binding="#{bindings.CodigoCiud.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.CodigoCiud.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.CodigoGiro.inputValue}"
+                  label="#{bindings.CodigoGiro.hints.label}"
+                  required="#{bindings.CodigoGiro.hints.mandatory}"
+                  columns="#{bindings.CodigoGiro.hints.displayWidth}"
+                  maximumLength="#{bindings.CodigoGiro.hints.precision}"
+                  shortDesc="#{bindings.CodigoGiro.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.CodigoGiro.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.CodigoGiro.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.NombreClie.inputValue}" label="Nombre"
+                  required="#{bindings.NombreClie.hints.mandatory}"
+                  columns="#{bindings.NombreClie.hints.displayWidth}"
+                  maximumLength="#{bindings.NombreClie.hints.precision}"
+                  shortDesc="#{bindings.NombreClie.hints.tooltip}" id="it7">
+      <f:validator binding="#{bindings.NombreClie.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.DireccionClie.inputValue}" label="Dirección"
+                  required="#{bindings.DireccionClie.hints.mandatory}"
+                  columns="#{bindings.DireccionClie.hints.displayWidth}"
+                  maximumLength="#{bindings.DireccionClie.hints.precision}"
+                  shortDesc="#{bindings.DireccionClie.hints.tooltip}" id="it8">
+      <f:validator binding="#{bindings.DireccionClie.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.TelefonoClie.inputValue}" label="Telefono"
+                  required="#{bindings.TelefonoClie.hints.mandatory}"
+                  columns="#{bindings.TelefonoClie.hints.displayWidth}"
+                  maximumLength="#{bindings.TelefonoClie.hints.precision}"
+                  shortDesc="#{bindings.TelefonoClie.hints.tooltip}" id="it5">
+      <f:validator binding="#{bindings.TelefonoClie.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.RowID.inputValue}"
+                  label="#{bindings.RowID.hints.label}"
+                  required="#{bindings.RowID.hints.mandatory}"
+                  columns="#{bindings.RowID.hints.displayWidth}"
+                  maximumLength="#{bindings.RowID.hints.precision}"
+                  shortDesc="#{bindings.RowID.hints.tooltip}" id="it2">
+      <f:validator binding="#{bindings.RowID.validator}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelGroupLayout layout="horizontal" id="pgl2">
+          <af:commandButton actionListener="#{bindings.First.execute}"
+                            text="First" disabled="#{!bindings.First.enabled}"
+                            partialSubmit="true" id="cb2"/>
+          <af:commandButton actionListener="#{bindings.Previous.execute}"
+                            text="Previous"
+                            disabled="#{!bindings.Previous.enabled}"
+                            partialSubmit="true" id="cb1"/>
+          <af:commandButton actionListener="#{bindings.Next.execute}"
+                            text="Next" disabled="#{!bindings.Next.enabled}"
+                            partialSubmit="true" id="cb3"/>
+          <af:commandButton actionListener="#{bindings.Last.execute}"
+                            text="Last" disabled="#{!bindings.Last.enabled}"
+                            partialSubmit="true" id="cb5"/>
+        </af:panelGroupLayout>
+        <af:commandButton text="Submit" id="cb4" action="commit"/>
+        <af:commandButton text="Cancelar" id="cb6" action="rollback"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

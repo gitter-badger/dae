@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="searchPageDef"
+                Package="tarea.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClientesView2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ClientesView2Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ClientesView2Iterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ClientesView2Iterator"
+                  id="ImplicitViewCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClientesView2Iterator" id="ClientesView2">
+      <nodeDefinition DefName="tienda_adf.model.ClientesView"
+                      Name="ClientesView20">
+        <AttrNames>
+          <Item Value="RutClie"/>
+          <Item Value="DvClie"/>
+          <Item Value="CodigoCiud"/>
+          <Item Value="CodigoGiro"/>
+          <Item Value="NombreClie"/>
+          <Item Value="DireccionClie"/>
+          <Item Value="TelefonoClie"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ClientesView2Iterator" id="ClientesView21">
+      <nodeDefinition DefName="tienda_adf.model.ClientesView"
+                      Name="ClientesView210">
+        <AttrNames>
+          <Item Value="RutClie"/>
+          <Item Value="DvClie"/>
+          <Item Value="CodigoCiud"/>
+          <Item Value="CodigoGiro"/>
+          <Item Value="NombreClie"/>
+          <Item Value="DireccionClie"/>
+          <Item Value="TelefonoClie"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
